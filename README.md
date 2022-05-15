@@ -1,27 +1,18 @@
 # RestaurentApp
+This application is very simple and similarly we can create more pages for an full management application.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
+# To use the Application
+1. First Signup and then Login using the email and password you provided in the signup page
+2. After that you will be redirected to the main page Restaurent Dashboard where you can Add Restaurent User Details, Edit, Delete and Save all the records and also you can logout at the end.
 
-## Development server
+# To run the Project 
+ng serve
+and it will run on localhost:4200/
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+# To run the server
+json-server --watch db.json
+and it start in localhost:3000/
 
-## Code scaffolding
+# Feel Free to use this code and for  an full management system contact me @ dborah407@gmail.com
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Thank you♥
