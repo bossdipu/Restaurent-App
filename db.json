@@ -1,90 +1,39 @@
 {
   "posts": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    },
-    {
       "id": 2,
-      "name": "dipankar@gmai.com",
-      "email": "Dipankar",
-      "mobile": "084504380",
-      "address": "jorhat",
-      "services": "Tea"
+      "name": "k@gmail.com",
+      "email": "King",
+      "mobile": "689469497474",
+      "address": "Somewhere",
+      "services": "Food"
     },
     {
       "id": 3,
-      "name": "dipankar@gmai.com",
-      "email": "Dipankar",
-      "mobile": "084504380",
-      "address": "jorhat",
-      "services": "Tea"
-    },
-    {
-      "id": 4,
-      "name": "ljbl@gmail,ci",
-      "email": "bOSS",
-      "mobile": "2536253653",
-      "address": "dvsv",
-      "services": "sdsvs"
-    },
-    {
-      "id": 5,
-      "name": "a@gmail.com",
-      "email": "Hi",
-      "mobile": "iio",
-      "address": "oiono",
-      "services": "obbol"
-    },
-    {
-      "id": 6,
-      "name": "jhv",
-      "email": "jvg",
-      "mobile": "hvk",
-      "address": "hvhvkj",
-      "services": "vvj"
-    },
-    {
-      "id": 7,
-      "name": "ads@gmail.com",
-      "email": "Abhishek",
-      "mobile": "13265w473658",
-      "address": "sdfhsdthvbs",
-      "services": "qwdfnjmfgk"
-    },
-    {
-      "id": 8,
-      "name": "g f ",
-      "email": "dg",
-      "mobile": "vsgqrb",
-      "address": "",
-      "services": "vgr"
-    },
-    {
-      "id": 9,
-      "name": "y",
-      "email": "TF",
-      "mobile": "uyufv",
-      "address": " ",
-      "services": "kg"
-    },
-    {
-      "id": 10,
-      "name": "uh",
-      "email": "asad",
-      "mobile": "iugi",
-      "address": "gyi",
-      "services": "vy"
+      "name": "boss@gmail.com",
+      "email": "Boss",
+      "mobile": "869497649754",
+      "address": "Mumbai",
+      "services": "Chai"
     }
   ],
-  "comments": [
+  "signup": [
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "name": "Dipankar",
+      "email": "dborah407@gmail.com",
+      "mobile": "1234567890",
+      "password": "Dipankar@123",
+      "id": 3
+    },
+    {
+      "name": "Dipankar",
+      "email": "d@gmail.com",
+      "mobile": "123456789",
+      "password": "1234",
+      "id": 4
     }
   ],
+  "comments": [],
   "profile": {
     "name": "typicode"
   }

@@ -14,6 +14,8 @@ export class RestaurentDashComponent implements OnInit {
   formValue!: FormGroup
   restaurentModelObj: RestaurentData = new RestaurentData
   allRestaurentData: any
+  showAdd!: boolean;
+  showbtn!: boolean;
 
   constructor(
     private formbuilder: FormBuilder,
@@ -30,6 +32,12 @@ export class RestaurentDashComponent implements OnInit {
     this.getAllData()
   }
 
+  clickAddRestau() {
+    this.formValue.reset();
+    this.showAdd = true;
+    this.showbtn = false;
+  }
+
   //Subscribing the data from Services
   addRestau() {
     this.restaurentModelObj.name = this.formValue.value.name;
@@ -41,6 +49,9 @@ export class RestaurentDashComponent implements OnInit {
     this.api.postRestaurent(this.restaurentModelObj).subscribe(res => {
       console.log(res);
       alert("Restaurent records Added Successfully");
+      let ref = document.getElementById('clear');
+      ref?.click();
+
       this.formValue.reset()
       this.getAllData();
     },
@@ -49,7 +60,7 @@ export class RestaurentDashComponent implements OnInit {
       })
   }
   //Get all Data in Table
-  getAllData(): void {
+  getAllData() {
     this.api.getRestaurent().subscribe(res => {
       this.allRestaurentData = res;
     })
@@ -63,7 +74,9 @@ export class RestaurentDashComponent implements OnInit {
   }
   //Edit Data
   onEditRestau(data: any) {
-    this.restaurentModelObj.id =data.id;
+    this.showAdd = false;
+    this.showbtn = true;
+    this.restaurentModelObj.id = data.id;
     this.formValue.controls['name'].setValue(data.name);
     this.formValue.controls['email'].setValue(data.email);
     this.formValue.controls['mobile'].setValue(data.mobile);
@@ -71,15 +84,18 @@ export class RestaurentDashComponent implements OnInit {
     this.formValue.controls['services'].setValue(data.services);
   }
 
-  updateRestau(){
-  this.restaurentModelObj.name = this.formValue.value.name;
+  updateRestau() {
+    this.restaurentModelObj.name = this.formValue.value.name;
     this.restaurentModelObj.email = this.formValue.value.email;
     this.restaurentModelObj.mobile = this.formValue.value.mobile;
     this.restaurentModelObj.address = this.formValue.value.address;
     this.restaurentModelObj.services = this.formValue.value.services;
 
-    this.api.updateRestaurent(this.restaurentModelObj,this.restaurentModelObj.id).subscribe(res=>{
+    this.api.updateRestaurent(this.restaurentModelObj, this.restaurentModelObj.id).subscribe(res => {
       alert("Records Update Successfully");
+
+      this.formValue.reset();
+      this.getAllData();
     })
   }
 }

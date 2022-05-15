@@ -2,8 +2,9 @@
     <div class="container-fluid">
         <h2>Restaurent Records App</h2>
         <div class="d-flex">
-            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Add
-                Restaurent</button>
+            <button (click)="clickAddRestau()" type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Add
+                Restaurent</button>&nbsp;
+                <button routerLink="/login" class="btn btn-danger">Log Out</button>
         </div>
     </div>
 </nav>
@@ -38,9 +39,8 @@
             <td>{{data.address}}</td>
             <td>{{data.services}}</td>
             <td>
-                <button class="btn btn-info" (click) = "onEditRestau(data)">Edit</button>&nbsp;
-                <button class="btn btn-danger" (click) = "deleteRestau(data)">Delete</button>&nbsp;
-                <button class="btn btn-danger" (click) = "updateRestau()">Update Details</button>
+                <button class="btn btn-info" data-toggle="modal" data-target="#exampleModal" (click)="onEditRestau(data)">Edit</button>&nbsp;
+                <button class="btn btn-danger" (click)="deleteRestau(data)">Delete</button>&nbsp;
             </td>
         </tr>
     </tbody>
@@ -53,7 +53,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Restaurent Reords Form</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -64,33 +64,34 @@
                     <div class="mb-3">
                         <label class="form-label">Name</label>
                         <input type="text" formControlName="email" class="form-control" id="formGroupExampleInput"
-                            placeholder="Restaurent Email ID">
+                            placeholder="Enter Email ID">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Email Id</label>
                         <input type="text" formControlName="name" class="form-control" id="formGroupExampleInput2"
-                            placeholder="Restaurent Name">
+                            placeholder="Enter Name">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Mobile</label>
                         <input type="text" formControlName="mobile" class="form-control" id="formGroupExampleInput"
-                            placeholder="Restaurent Mobile">
+                            placeholder="Enter Mobile">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Address</label>
                         <input type="text" formControlName="address" class="form-control" id="formGroupExampleInput"
-                            placeholder="Restaurent Address">
+                            placeholder="Enter Address">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Services</label>
                         <input type="text" formControlName="services" class="form-control" id="formGroupExampleInput"
-                            placeholder="Restaurent Services">
+                            placeholder="Enter Services">
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" (click)="addRestau()">Add Details</button>
+                <button type="button" class="btn btn-warning" id="clear" data-dismiss="modal">Clear</button>
+                <button *ngIf="showAdd" type="button" class="btn btn-primary" (click)="addRestau()">Add Details</button>
+                <button *ngIf="showbtn" type="button" class="btn btn-primary" (click)="updateRestau()">Update Details</button>
             </div>
         </div>
     </div>
